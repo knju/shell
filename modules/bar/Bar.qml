@@ -180,6 +180,15 @@ ColumnLayout {
                     }
                 }
             }
+            DelegateChoice {
+                roleValue: "htbStatus"
+                delegate: EntryWrapper {
+                    HtbStatus {
+                        objectName: "taskbarHtbStatus"
+                        screenState: root.screenState
+                    }
+                }
+            }
         }
     }
 
