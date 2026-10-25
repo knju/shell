@@ -36,7 +36,8 @@ Item {
                 }
 
                 StyledText {
-                    text: Tr.formatDateTime(new Date(), "dddd, MMMM d")
+                    // FIXED: Changed Tr.formatDateTime to Qt.formatDateTime
+                    text: Qt.formatDateTime(new Date(), "dddd, MMMM d")
                     font: Tokens.font.body.small
                     color: Colours.palette.m3onSurfaceVariant
                 }
@@ -168,7 +169,8 @@ Item {
 
                         StyledText {
                             Layout.alignment: Qt.AlignHCenter
-                            text: forecastItem.index === 0 ? Tr.trCtx("Today", "forecast column") : Tr.formatDateTime(new Date(forecastItem.modelData.date), "ddd")
+                            // FIXED: Changed Tr.formatDateTime to Qt.formatDateTime
+                            text: forecastItem.index === 0 ? Tr.trCtx("Today", "forecast column") : Qt.formatDateTime(new Date(forecastItem.modelData.date), "ddd")
                             font: Tokens.font.body.builders.medium.weight(Font.DemiBold).build()
                             color: Colours.palette.m3primary
                         }
@@ -176,7 +178,8 @@ Item {
                         StyledText {
                             Layout.topMargin: -Tokens.spacing.extraSmall
                             Layout.alignment: Qt.AlignHCenter
-                            text: Tr.formatDateTime(new Date(forecastItem.modelData.date), "MMM d")
+                            // FIXED: Changed Tr.formatDateTime to Qt.formatDateTime
+                            text: Qt.formatDateTime(new Date(forecastItem.modelData.date), "MMM d")
                             font: Tokens.font.body.small
                             opacity: 0.7
                             color: Colours.palette.m3onSurfaceVariant
